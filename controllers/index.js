@@ -2,10 +2,13 @@ const usersHandler = require('./users/usersHandler')
 const express = require('express'),
     router = express.Router()
 
-// Routes in use
-router.use('/users', usersHandler)
-router.use('/pagar')
-router.use('/receber')
+// Middlewares
+const logMiddleware = require('../middlewares/logger.js')
+
+// Rotas em uso
+router.use('/users', logMiddleware, usersHandler.router)
+    // router.use('/pagar')
+    // router.use('/receber')
 
 // 404 setup
 router.use('*', (req, res) => {

@@ -13,5 +13,4 @@ router.put('/', (req, res) => {
 router.delete('/', (req, res) => {
     res.send('DELETE realizado com sucesso em /users')
 })
-
-module.exports = router
+exports.router = router
