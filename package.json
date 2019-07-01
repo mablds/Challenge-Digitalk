@@ -1,0 +1,35 @@
+{
+  "name": "challenge-digitalk",
+  "version": "1.0.0",
+  "description": "Bank API using PostgreSQL, JWT, Node and Express.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mablds/Challenge-Digitalk.git"
+  },
+  "keywords": [
+    "API",
+    "Node.js",
+    "Bank",
+    "banksystem",
+    "bank-system",
+    "challange",
+    "digitalk",
+    "JWT",
+    "backend"
+  ],
+  "author": "mablds (Marcelo Arthur)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mablds/Challenge-Digitalk/issues"
+  },
+  "homepage": "https://github.com/mablds/Challenge-Digitalk#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1"
+  }
+}
