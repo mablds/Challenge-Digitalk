@@ -1,35 +1,26 @@
-const Sequelize = require('sequelize')
-const Model = Sequelize.Model;
+const dbInstance = require('../db')
+const User = require('../post-models/User')(dbInstance)
 
-class User extends Model {}
+module.exports.addPerson = async(person) => {
+    return await User.create(person)
+}
 
-module.exports = (sequelize) => {
-    return User.init({
-        // attributes
-        name: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        username: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        email: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        password: {
-            type: Sequelize.STRING,
-            allowNull: false
-        },
-        admin: {
-            type: Sequelize.BOOLEAN,
-            allowNull: false
-        },
-    }, {
-        sequelize,
-        modelName: 'user'
-            // options
-    });
+module.exports.findAll = async() => {
+    return await User.findAll()
+}
 
+module.exports.update = async(id, person) => {
+
+}
+module.exports.delete = async(id) => {
+
+}
+module.exports.setAdm = async(id) => {
+
+}
+
+module.exports.findById = async(id) => {
+    return await User.findAll({
+        where: { id }
+    })
 }
