@@ -3,18 +3,16 @@ const express = require('express'),
 
 // Handlers
 const usersHandler = require('./users/usersHandler')
-const pagarHandler = require('./bills/pagarHandler')
-const receberHandler = require('./bills/receberHandler')
+const authHandler = require('./auth/authHandler')
 
 // Middlewares
-const logMiddleware = require('../middlewares/logger.js')
+const logMiddleware = require('../middlewares/logger')
+    // Rotas em uso
+router.use(logMiddleware)
 
-// Rotas em uso
-router.use('/users', logMiddleware, usersHandler.router)
-router.use('/pagar', logMiddleware, pagarHandler.router)
-router.use('/receber', logMiddleware, receberHandler.router)
-
-// 404 setup
+router.use('/users', usersHandler.router)
+router.use('/auth', authHandler.router)
+    // 404 setup
 router.use('*', (req, res) => {
     res.status(404).send('Página não encontrada.')
 })
