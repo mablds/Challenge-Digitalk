@@ -2,15 +2,18 @@ const express = require('express'),
     router = express.Router()
 
 //CRUD functions
-const getReceber = require('../Receber/getReceber')
-const createReceber = require('../Receber/createReceber')
-const editReceber = require('../Receber/editReceber')
-const deleteReceber = require('../Receber/deleteReceber')
+const getReceber = require('./getReceber')
+const createReceber = require('./createReceber')
+const editReceber = require('./editReceber')
+const deleteReceber = require('./deleteReceber')
 
 //Rotas para a realização do CRUD dos usuários:
 
 //Consulta uma conta específica
-router.get('/:id', getReceber)
+router.get('/:id', getReceber.byId)
+
+//Consulta todas as contas
+router.get('/', getReceber.findAll)
 
 //Cria novas contas
 router.post('/', createReceber)
