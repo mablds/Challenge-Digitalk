@@ -9,7 +9,9 @@ const authHandler = require('./auth/authHandler')
 
 // Middlewares
 const logMiddleware = require('../middlewares/logger')
+const authMiddleware = require('../middlewares/auth')
 router.use(logMiddleware)
+    // router.use(authMiddleware)
 
 // Rotas em uso
 router.use('/users', usersHandler.router)
