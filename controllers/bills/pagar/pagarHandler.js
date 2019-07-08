@@ -6,6 +6,7 @@ const getPagar = require('./getPagar')
 const createPagar = require('./createPagar')
 const editPagar = require('./editPagar')
 const deletePagar = require('./deletePagar')
+const pagarConta = require('./pagarConta')
 
 //Importação do middleware de verificação do token
 const authMiddleware = require('../../../middlewares/auth')
@@ -24,6 +25,9 @@ router.post('/', accessAdmin, createPagar)
 
 //Edita contas existentes
 router.put('/:id', accessAdmin, editPagar)
+
+//Definir a conta como paga
+router.patch('/:id', accessAdmin, pagarConta)
 
 //Apaga contas
 router.delete('/:id', accessAdmin, deletePagar)
