@@ -59,7 +59,7 @@ Os usuários são setados como padrão no banco com o campo "admin" = false. Par
 ## Querys - Usuários
 As querys na database são realizadas ao realizar requisições em determinadas rotas com determinados métodos. Confira o exemplo a seguir:
 
-###### Requisição necessária:
+#### Requisição necessária:
 | Métodos    |Rotas|Admin|Ação|Resposta Esperada|Status Code|
 |:----------:|:-----:|:----:|:---:|:-----:|:----:|
 |GET         |/users|✔️|Lista todos os usuários|Vetor de Usuários|200|
@@ -67,6 +67,15 @@ As querys na database são realizadas ao realizar requisições em determinadas 
 |POST|        /users|✔️|Cadastra um usuário cuja as informações foram passadas no Body da requisição| Usuário Criado| 201|
 |UPDATE|/users/:id|✔️|Edita as informações de um usuário específico| Informações atualizadas |202|
 |DELETE      |/users/:id|✔️|Apaga um usuário específico| Usuário deletado |202|
+
+###### Informações necessárias para a Listar o(s) usuário(s):
+```
+Rota: /users (/:id)
+Método: GET,
+Header: x-access-token: token,
+Body: 
+```
+
 
 ###### Informações necessárias para a Criação do usuário:
 ```
@@ -78,6 +87,29 @@ Body: {
     "username": "teste",
     "email": "teste@teste",
     "password": "teste",
+    "admin": true
+}
+```
+
+
+###### Informações necessárias para Alterar o usuário:
+```
+Rota: /users/:id
+Método: PUT,
+Header: x-access-token: token,
+Body: { Confira os exemplos abaixo }
+```
+###### Exemplos de Body para a alteração:
+```
+Body: {
+    "name": "Marcelo",
+    "email": "xpto@teste.com.br" //Único
+    "username": "bla"
+}
+```
+
+```
+Body: {
     "admin": true
 }
 ```
