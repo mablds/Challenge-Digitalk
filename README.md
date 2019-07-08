@@ -2,14 +2,14 @@
 Desafio atribuído como método avaliativo de processo seletivo da empresa [Digitalk](https://digitalk.com.br/). Desafio estruturado para Desenvolvedor Backend Jr.
 
 ## Desafio
-###Premissas:
+### Premissas:
 
 - Criar uma API para controle financeiro, utilizando NodeJS, Express.
 - O banco de dados pode ser PostgreSQL (Preferência) ou MySQL.
 - Se possível utilizar docker e docker-compose.
 - Não é necessário desenvolver front-end (a não ser que você deseje), apenas o back-end.
 
-###Teste:
+### Teste:
 Desenvolver um serviço que seja capaz de armazenar fluxo de caixa e gerar relatórios.
 
 Sua tarefa é desenvolver os serviços REST abaixo:
