@@ -64,4 +64,4 @@ const parsedValues = (range, value) => {
         return value.map(e => e.dataValues)
 }
 
-const addZero = (n) => n < 10 ? '0' + n : n
+const addZero = n => n < 10 ? '0' + n : n
