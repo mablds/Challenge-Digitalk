@@ -133,7 +133,7 @@ ___
 ```
 Rota: /inc || /out (/:id)
 Método: GET,
-Header: ,
+Header: x-access-token: token,
 Body: ,
 ```
 
