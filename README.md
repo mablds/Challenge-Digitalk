@@ -123,10 +123,10 @@ ___
 |:----------:|:-----:|:----:|:---:|:-----:|:----:|
 |GET         |/inc - /out||Lista todas as Contas a Pagar ou Contas Recebidas|Vetor de Contas a Pagar ou Contas Recebidas|200|
 |GET         |/inc/:id - /out/:id||Lista as informações de Contas a Pagar ou Contas Recebidas específicas| Objeto de Conta a Pagar ou Conta Recebidas|200|
-|POST|        /users|✔️|Cadastra uma Conta a Pagar ou Conta Recebidas cuja as informações foram passadas no Body da requisição| Conta a Pagar ou Conta Recebida criada com sucesso| 201|
+|POST|        /inc - /out|✔️|Cadastra uma Conta a Pagar ou Conta Recebidas cuja as informações foram passadas no Body da requisição| Conta a Pagar ou Conta Recebida criada com sucesso| 201|
 |UPDATE|/inc/:id - /out/:id|✔️|Edita as informações de uma Conta a Pagar ou Conta Recebida específico| Informações atualizadas |202|
 |DELETE      |/inc/:id - /out/:id|✔️|Apaga uma Conta específico| Conta deletado |202|
-|PATCH      |/inc/:id - /out/:id|✔️|Método que altera o status de false para true (Considera como paga) e determina a data para a informação contida no campo paymentDate do BD| Conta paga || Conta recebida |202|
+|PATCH|/inc/:id - /out/:id|✔️|Método que altera o status de false para true (Considera como paga) e determina a data para a informação contida no campo paymentDate do BD| Conta paga - Conta recebida | 202|
 
 ___
 #### Informações necessárias para a Listar a(s) contas(s):
