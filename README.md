@@ -68,6 +68,7 @@ As querys na database são realizadas ao realizar requisições em determinadas 
 |UPDATE|/users/:id|✔️|Edita as informações de um usuário específico| Informações atualizadas |202|
 |DELETE      |/users/:id|✔️|Apaga um usuário específico| Usuário deletado |202|
 
+___
 #### Informações necessárias para a Listar o(s) usuário(s):
 ```
 Rota: /users (/:id)
@@ -76,7 +77,7 @@ Header: x-access-token: token,
 Body: 
 ```
 
-
+___
 #### Informações necessárias para a Criação do usuário:
 ```
 Rota: /users
@@ -91,7 +92,7 @@ Body: {
 }
 ```
 
-
+___
 #### Informações necessárias para Alterar o usuário:
 ```
 Rota: /users/:id
@@ -113,7 +114,7 @@ Body: {
     "admin": true
 }
 ```
-
+___
 
 ##### Login, Logout (Utilizar JWT)
 ##### Login, Logout (Utilizar JWT)
