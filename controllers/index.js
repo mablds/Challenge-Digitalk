@@ -5,19 +5,20 @@ const express = require('express'),
 const usersHandler = require('./users/usersHandler')
 const pagarHandler = require('./bills/pagar/pagarHandler')
 const receberHandler = require('./bills/receber/receberHandler')
+const reportHandler = require('./bills/report/reportHandler')
 const authHandler = require('./auth/authHandler')
 
 // Middlewares
 const logMiddleware = require('../middlewares/logger')
-const authMiddleware = require('../middlewares/auth')
+
 router.use(logMiddleware)
-    // router.use(authMiddleware)
 
 // Rotas em uso
+router.use('/report', reportHandler.router)
+router.use('/auth', authHandler.router)
 router.use('/users', usersHandler.router)
 router.use('/out', pagarHandler.router)
 router.use('/inc', receberHandler.router)
-router.use('/auth', authHandler.router)
 
 // 404 setup
 router.use('*', (req, res) => {
