@@ -14,13 +14,14 @@ module.exports.findByEmail = async(req, res) => {
         console.log(user)
         const password = user[0].dataValues.password
         const id = user[0].dataValues.id
+        const administrador = user[0].dataValues.admin
 
 
         if (password === req.body.password) {
             console.table(user[0].dataValues)
             res.status(200).send({
                 user,
-                token: generateToken({ id: id })
+                token: generateToken({ id: id, admin: administrador })
             })
         } else {
             res.status(400).send('Senha Incorreta.')
