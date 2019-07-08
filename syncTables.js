@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('postgresql://uzm2w6azfyvlygl5keka:5xpBBY6yzxXcJtPtBGfY@bsqufuog04qvezb8p8zq-postgresql.services.clever-cloud.com:5432/bsqufuog04qvezb8p8zq', { dialect: 'postgres' })
+const sequelize = new Sequelize(process.env.POSTGRESQL_URI, { dialect: 'postgres' })
 const User = require('./model/post-models/User')(sequelize)
 const IncommingBill = require('./model/post-models/IncommingBill')(sequelize)
 const OutgoingBill = require('./model/post-models/OutgoingBill')(sequelize)

@@ -27,6 +27,22 @@ Sua tarefa é desenvolver os serviços REST abaixo:
 
 
 # Documentação da API
+Para a criação desta API, utilizei o banco de dados PostgreSQL gratuito disponibilizado pelo [CleverCloud](https://clever-cloud.com/). Para a relação com o banco de dados hostado, foi utilizada a lib do Sequelize.js.
+
+##### Para rodar o projeto:
+```
+git clone
+npm install
+npm run syncTables
+npm start
+```
+
+Além dos passos informados, é necessário um arquivo .env com os seguintes dados:
+```
+POSTGRESQL_URI=postgresql://ip:port:login
+AUTH_HASH=a_really_good_password
+PORT=3000
+```
 
 ## Login
 Para efetuar login na API, basta fazer um request com o método POST na rota "/auth" contendo no body as informações de e-mail e senha. Confira o exemplo do body a seguir:
