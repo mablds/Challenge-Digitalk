@@ -153,7 +153,7 @@ Body: {
 ```
 
 ___
-#### Informações necessárias para Alterar o usuário:
+#### Informações necessárias para Alterar as Contas:
 ```
 Rota: /inc/:id || /out/:id
 Método: PUT,
