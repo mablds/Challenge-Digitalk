@@ -1,20 +1,27 @@
 const User = require('../../model/DAO/usersDAO')
 const jwt = require('jsonwebtoken')
-const hash = 'ce3e71fdba3a680acab1d6c8d61fe909'
+const authConfig = require('../../configs/authConfig')
+const hash = authConfig.secret
 
 module.exports.findByEmail = async(req, res) => {
     try {
+        function generateToken(params = {}) {
+            return jwt.sign(params, hash, {
+                expiresIn: 7200 //2h
+            })
+        }
         const user = await User.findByEmail(req.body.email)
+        console.log(user)
         const password = user[0].dataValues.password
         const id = user[0].dataValues.id
 
+
         if (password === req.body.password) {
-            const token = await jwt.sign({ id: id }, hash, {
-                expiresIn: 3600 //1h
-            })
             console.table(user[0].dataValues)
-            console.log('Token provided: ' + token)
-            res.status(200).send('Login efetuado com sucesso')
+            res.status(200).send({
+                user,
+                token: generateToken({ id: id })
+            })
         } else {
             res.status(400).send('Senha Incorreta.')
         }
