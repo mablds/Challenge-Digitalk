@@ -68,7 +68,7 @@ As querys na database são realizadas ao realizar requisições em determinadas 
 |UPDATE|/users/:id|✔️|Edita as informações de um usuário específico| Informações atualizadas |202|
 |DELETE      |/users/:id|✔️|Apaga um usuário específico| Usuário deletado |202|
 
-###### Informações necessárias para a Listar o(s) usuário(s):
+#### Informações necessárias para a Listar o(s) usuário(s):
 ```
 Rota: /users (/:id)
 Método: GET,
@@ -77,7 +77,7 @@ Body:
 ```
 
 
-###### Informações necessárias para a Criação do usuário:
+#### Informações necessárias para a Criação do usuário:
 ```
 Rota: /users
 Método: POST,
@@ -92,7 +92,7 @@ Body: {
 ```
 
 
-###### Informações necessárias para Alterar o usuário:
+#### Informações necessárias para Alterar o usuário:
 ```
 Rota: /users/:id
 Método: PUT,
