@@ -181,8 +181,32 @@ Método: PATCH,
 Header: x-access-token: token,
 Body: ,
 ```
+___
 
-##### Login, Logout (Utilizar JWT)
-##### Login, Logout (Utilizar JWT)
-##### Login, Logout (Utilizar JWT)
-##### Login, Logout (Utilizar JWT)
+#### Relatório:
+
+```
+Rota: /report
+Método: GET,
+Header: x-access-token: token, opcionais: init-date & end-date,
+Formato dos opcionais: "YYYY-MM-DD"
+Body: ,
+```
+
+___
+##### Informações necessárias para receber um Relatório completo:
+```
+Rota: /report
+Método: GET,
+Header: x-access-token: token,
+Body: {}
+```
+##### Informações necessárias para receber um Relatório entre duas datas:
+```
+Rota: /report
+Método: GET,
+Header: x-access-token: token,
+        init-date: 2019-07-05,
+        end-date: 2019-07-18,
+Body: {}
+```
