@@ -25,10 +25,10 @@ Sua tarefa é desenvolver os serviços REST abaixo:
 * Ter a opção de range de data para esse relatório.
 
 
+
 # Documentação da API
 
-
-#### Login
+### Login
 Para efetuar login na API, basta fazer um request com o método POST na rota "/auth" contendo no body as informações de e-mail e senha. Confira o exemplo do body a seguir:
 
 ###### Requisição necessária: 
