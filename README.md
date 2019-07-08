@@ -28,13 +28,13 @@ Sua tarefa é desenvolver os serviços REST abaixo:
 
 # Documentação da API
 
-### Login
+## Login
 Para efetuar login na API, basta fazer um request com o método POST na rota "/auth" contendo no body as informações de e-mail e senha. Confira o exemplo do body a seguir:
 
 ###### Requisição necessária: 
 
 ```
-Rota: api/auth,
+Rota: /auth,
 Método: POST,
 Body: {
     "email": "teste@teste",
@@ -47,13 +47,26 @@ Body: {
 ```
 Body: {
     user: Informações do usuário logado,
-    token: "aisuhdais98172d1872361uh12gd1872g11927dg1872"
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImFkbWluIjp0cnVlLCJpYXQiOjE1NjI2MDYwNTEsImV4cCI6MTU2MjYxMzI1MX0.PS2YMK99XRuMSzKHlr15rJqaowq6Rh3udC9B8GqdVLM"
 }
 ```
 
-##### Login, Logout (Utilizar JWT)
-##### Login, Logout (Utilizar JWT)
-##### Login, Logout (Utilizar JWT)
+## Nivel de Usuario
+Os usuários são setados como padrão no banco com o campo "admin" = false. Para realizar qualquer alteração no banco e para realizar qualquer operação com os dados dos usuários, é necessário estar autenticado com um token de "admin" = true. O nível de operador ("admin" = false) só é capaz de visualizar as Contas a Pagar, Contas a Receber e Relatório completo.
+
+## Querys - Usuários
+As querys na database são realizadas ao realizar requisições em determinadas rotas com determinados métodos. Confira o exemplo a seguir:
+
+###### Requisição necessária:
+| Métodos    |Rotas|Admin|
+|:----------:|:-----:|:----:|
+|GET         |/users|✔️|
+|GET         |/users/:id|✔️|
+|POST|        /users|✔️|
+|UPDATE|/users/:id|✔️|
+|DELETE      |/users/:id|✔️|
+
+
 ##### Login, Logout (Utilizar JWT)
 ##### Login, Logout (Utilizar JWT)
 ##### Login, Logout (Utilizar JWT)
