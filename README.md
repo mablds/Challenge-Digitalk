@@ -25,6 +25,36 @@ Sua tarefa é desenvolver os serviços REST abaixo:
 * Ter a opção de range de data para esse relatório.
 
 
-#Documentação da minha API
-Seguindo as premissas do teste, de antemão aviso que faltou implementar o front e não foi utilizado docker. A razão pela não produção destes itens foi devidamente pelo tempo. Mas em breve vou implementar.
+# Documentação da API
 
+
+#### Login
+Para efetuar login na API, basta fazer um request com o método POST na rota "/auth" contendo no body as informações de e-mail e senha. Confira o exemplo do body a seguir:
+
+###### Requisição necessária: 
+
+```
+Rota: api/auth,
+Método: POST,
+Body: {
+    "email": "teste@teste",
+    "password": "teste"
+}
+```
+
+###### Resposta esperada: 
+
+```
+Body: {
+    user: Informações do usuário logado,
+    token: "aisuhdais98172d1872361uh12gd1872g11927dg1872"
+}
+```
+
+##### Login, Logout (Utilizar JWT)
+##### Login, Logout (Utilizar JWT)
+##### Login, Logout (Utilizar JWT)
+##### Login, Logout (Utilizar JWT)
+##### Login, Logout (Utilizar JWT)
+##### Login, Logout (Utilizar JWT)
+##### Login, Logout (Utilizar JWT)
