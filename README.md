@@ -36,6 +36,7 @@ Para efetuar login na API, basta fazer um request com o método POST na rota "/a
 ```
 Rota: /auth,
 Método: POST,
+Header: ,
 Body: {
     "email": "teste@teste",
     "password": "teste"
@@ -45,6 +46,7 @@ Body: {
 ###### Resposta esperada: 
 
 ```
+Status Code: 200
 Body: {
     user: Informações do usuário logado,
     token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImFkbWluIjp0cnVlLCJpYXQiOjE1NjI2MDYwNTEsImV4cCI6MTU2MjYxMzI1MX0.PS2YMK99XRuMSzKHlr15rJqaowq6Rh3udC9B8GqdVLM"
@@ -58,13 +60,27 @@ Os usuários são setados como padrão no banco com o campo "admin" = false. Par
 As querys na database são realizadas ao realizar requisições em determinadas rotas com determinados métodos. Confira o exemplo a seguir:
 
 ###### Requisição necessária:
-| Métodos    |Rotas|Admin|
-|:----------:|:-----:|:----:|
-|GET         |/users|✔️|
-|GET         |/users/:id|✔️|
-|POST|        /users|✔️|
-|UPDATE|/users/:id|✔️|
-|DELETE      |/users/:id|✔️|
+| Métodos    |Rotas|Admin|Ação|Resposta Esperada|Status Code|
+|:----------:|:-----:|:----:|:---:|:-----:|:----:|
+|GET         |/users|✔️|Lista todos os usuários|Vetor de Usuários|200|
+|GET         |/users/:id|✔️|Lista as informações de um usuário específico| Objeto de Usuário|200|
+|POST|        /users|✔️|Cadastra um usuário cuja as informações foram passadas no Body da requisição| Usuário Criado| 201|
+|UPDATE|/users/:id|✔️|Edita as informações de um usuário específico| Informações atualizadas |202|
+|DELETE      |/users/:id|✔️|Apaga um usuário específico| Usuário deletado |202|
+
+###### Informações necessárias para a Criação do usuário:
+```
+Rota: /users
+Método: POST,
+Header: x-access-token: token,
+Body: {
+    "name": "teste",
+    "username": "teste",
+    "email": "teste@teste",
+    "password": "teste",
+    "admin": true
+}
+```
 
 
 ##### Login, Logout (Utilizar JWT)
