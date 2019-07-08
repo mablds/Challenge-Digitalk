@@ -15,10 +15,21 @@ module.exports.FullReport = async(req, res) => {
 
     const reduceFunction = (acc, e) => acc + e.value
 
-    const totalAPagar = aPagar.filter((e) => e.status).reduce(reduceFunction, 0)
-    const totalPago = aPagar.filter((e) => !e.status).reduce(reduceFunction, 0)
-    const totalAReceber = aReceber.filter((e) => e.status).reduce(reduceFunction, 0)
-    const totalRecebido = aReceber.filter((e) => !e.status).reduce(reduceFunction, 0)
+    const totalAPagar = aPagar
+        .filter((e) => !e.status)
+        .reduce(reduceFunction, 0)
+
+    const totalPago = aPagar
+        .filter((e) => e.status)
+        .reduce(reduceFunction, 0)
+
+    const totalAReceber = aReceber
+        .filter((e) => !e.status)
+        .reduce(reduceFunction, 0)
+
+    const totalRecebido = aReceber
+        .filter((e) => e.status)
+        .reduce(reduceFunction, 0)
 
 
     res.send({
