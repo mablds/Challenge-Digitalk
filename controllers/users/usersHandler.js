@@ -9,16 +9,17 @@ const editUser = require('./editUser')
 
 //Importação do middleware de verificação do token
 const authMiddleware = require('../../middlewares/auth')
+const accessAdmin = require('../../middlewares/adminAccess')
 
-router.post('/', authMiddleware, createUser)
+router.post('/', accessAdmin, createUser)
 
-router.get('/', authMiddleware, getUsers.findAll)
+router.get('/', accessAdmin, getUsers.findAll)
 
-router.get('/:id', authMiddleware, getUsers.byId)
+router.get('/:id', accessAdmin, getUsers.byId)
 
-router.put('/:id', authMiddleware, editUser)
+router.put('/:id', accessAdmin, editUser)
 
-router.delete('/:id', authMiddleware, deleteUser)
+router.delete('/:id', accessAdmin, deleteUser)
 
 
 exports.router = router

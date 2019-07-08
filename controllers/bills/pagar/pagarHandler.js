@@ -9,6 +9,7 @@ const deletePagar = require('./deletePagar')
 
 //Importação do middleware de verificação do token
 const authMiddleware = require('../../../middlewares/auth')
+const accessAdmin = require('../../../middlewares/adminAccess')
 
 //Rotas para a realização do CRUD dos usuários:
 
@@ -19,12 +20,12 @@ router.get('/:id', authMiddleware, getPagar.byId)
 router.get('/', authMiddleware, getPagar.findAll)
 
 //Cria novas contas
-router.post('/', authMiddleware, createPagar)
+router.post('/', accessAdmin, createPagar)
 
 //Edita contas existentes
-router.put('/:id', authMiddleware, editPagar)
+router.put('/:id', accessAdmin, editPagar)
 
 //Apaga contas
-router.delete('/:id', authMiddleware, deletePagar)
+router.delete('/:id', accessAdmin, deletePagar)
 
 exports.router = router

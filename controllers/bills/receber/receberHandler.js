@@ -9,6 +9,7 @@ const deleteReceber = require('./deleteReceber')
 
 //Importação do middleware de verificação do token
 const authMiddleware = require('../../../middlewares/auth')
+const accessAdmin = require('../../../middlewares/adminAccess')
 
 //Rotas para a realização do CRUD dos usuários:
 
@@ -19,12 +20,12 @@ router.get('/:id', authMiddleware, getReceber.byId)
 router.get('/', authMiddleware, getReceber.findAll)
 
 //Cria novas contas
-router.post('/', authMiddleware, createReceber)
+router.post('/', accessAdmin, createReceber)
 
 //Edita contas existentes
-router.put('/:id', authMiddleware, editReceber)
+router.put('/:id', accessAdmin, editReceber)
 
 //Apaga contas
-router.delete('/:id', authMiddleware, deleteReceber)
+router.delete('/:id', accessAdmin, deleteReceber)
 
 exports.router = router

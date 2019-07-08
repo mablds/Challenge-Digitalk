@@ -3,7 +3,10 @@ const express = require('express'),
 
 const getReport = require('./getReport')
 
+//Importação do middleware de verificação do token
+const authMiddleware = require('../../../middlewares/auth')
+
 //rotas em uso:
-router.get('/', getReport.FullReport)
+router.get('/', authMiddleware, getReport.FullReport)
 
 exports.router = router
