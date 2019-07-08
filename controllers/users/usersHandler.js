@@ -6,18 +6,19 @@ const createUser = require('./createUser')
 const getUsers = require('./getUsers')
 const deleteUser = require('./deleteUser')
 const editUser = require('./editUser')
-    //Consulta usuários
 
-//botar um middleware de token válido como adm
-router.post('/', createUser)
+//Importação do middleware de verificação do token
+const authMiddleware = require('../../middlewares/auth')
 
-router.get('/', getUsers.findAll)
+router.post('/', authMiddleware, createUser)
 
-router.get('/:id', getUsers.byId)
+router.get('/', authMiddleware, getUsers.findAll)
 
-router.put('/:id', editUser)
+router.get('/:id', authMiddleware, getUsers.byId)
 
-router.delete('/:id', deleteUser)
+router.put('/:id', authMiddleware, editUser)
+
+router.delete('/:id', authMiddleware, deleteUser)
 
 
 exports.router = router

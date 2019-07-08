@@ -7,21 +7,24 @@ const createPagar = require('./createPagar')
 const editPagar = require('./editPagar')
 const deletePagar = require('./deletePagar')
 
+//Importação do middleware de verificação do token
+const authMiddleware = require('../../../middlewares/auth')
+
 //Rotas para a realização do CRUD dos usuários:
 
 //Consulta uma conta específica
-router.get('/:id', getPagar.byId)
+router.get('/:id', authMiddleware, getPagar.byId)
 
 //Consulta todas as contas
-router.get('/', getPagar.findAll)
+router.get('/', authMiddleware, getPagar.findAll)
 
 //Cria novas contas
-router.post('/', createPagar)
+router.post('/', authMiddleware, createPagar)
 
 //Edita contas existentes
-router.put('/:id', editPagar)
+router.put('/:id', authMiddleware, editPagar)
 
 //Apaga contas
-router.delete('/:id', deletePagar)
+router.delete('/:id', authMiddleware, deletePagar)
 
 exports.router = router
