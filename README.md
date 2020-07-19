@@ -81,7 +81,7 @@ As querys na database são realizadas ao realizar requisições em determinadas 
 |GET         |/users|✔️|Lista todos os usuários|Vetor de Usuários|200|
 |GET         |/users/:id|✔️|Lista as informações de um usuário específico| Objeto de Usuário|200|
 |POST|        /users|✔️|Cadastra um usuário cuja as informações foram passadas no Body da requisição| Usuário Criado| 201|
-|UPDATE|/users/:id|✔️|Edita as informações de um usuário específico| Informações atualizadas |202|
+|PUT|         /users/:id|✔️|Edita as informações de um usuário específico| Informações atualizadas |202|
 |DELETE      |/users/:id|✔️|Apaga um usuário específico| Usuário deletado |202|
 
 ___
