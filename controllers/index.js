@@ -19,6 +19,7 @@ router.use('/auth', authHandler.router)
 router.use('/users', usersHandler.router)
 router.use('/out', pagarHandler.router)
 router.use('/inc', receberHandler.router)
+router.use('/', (req, res) => res.status(200).send('Bem vindo à API de Cash Flow do mablds. :)'))
 
 // 404 setup
 router.use('*', (req, res) => {
